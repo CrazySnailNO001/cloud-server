@@ -4,8 +4,9 @@ server:
 eureka:
   instance:
     hostname: localhost
+    appname: registrationCenter
   client:
-    register-with-eureka: false
+    register-with-eureka: false  # 单点的时候设置为 false 禁止注册自身
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

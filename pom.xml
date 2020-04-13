@@ -38,6 +38,11 @@
             <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
 
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-security</artifactId>-->
+<!--		</dependency>-->
+
 		<!--jaxb-api jdk1.8以上版本 不加会报java.lang.TypeNotPresentException: Type javax.xml.bind.JAXBContext not present-->
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
@@ -79,6 +84,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+<!--					<target>8</target>-->
+<!--					<source>8</source>-->
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
