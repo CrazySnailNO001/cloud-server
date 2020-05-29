@@ -2,11 +2,13 @@ server:
   port: 8761
 
 eureka:
+  environment: xzhTest
   instance:
     hostname: localhost
-    appname: registrationCenter
+    appname: Eureka-Server
   client:
-    register-with-eureka: false  # 单点的时候设置为 false 禁止注册自身
+    register-with-eureka: true  # 单点的时候设置为 false 禁止注册自身
     fetch-registry: false
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:8762/eureka/,http://${eureka.instance.hostname}:8761/eureka/,http://${eureka.instance.hostname}:8763/eureka/
+  replication
