@@ -23,10 +23,10 @@ eureka:
     health-check-url-path: /health  # 健康检查页面的URL，相对路径，默认使用 HTTP 访问，如需使用 HTTPS则要使用绝对路径配置，缺省：/health
 #    ip-address: test
   client:
-    register-with-eureka: true  # 单点的时候设置为 false 禁止注册自身
-    fetch-registry: true #是否从Eureka获取注册信息，缺省：true,一般情况下，Eureka服务端是不需要的
-    service-url:
+    register-with-eureka: false  # 单点的时候设置为 false 禁止注册自身
+    fetch-registry: false #是否从Eureka获取注册信息，缺省：true,一般情况下，Eureka服务端是不需要的
+#    service-url:
       # Eureka服务器的地址，类型为HashMap，缺省的Key为 defaultZone；缺省的Value为 http://localhost:8761/eureka
       # 如果服务注册中心为高可用集群时，多个注册中心地址以逗号分隔。
-      defaultZone: http://localhost:8762/eureka/,http://localhost:8763/eureka/
+#      defaultZone: http://localhost:8762/eureka/,http://localhost:8763/eureka/
     registry-fetch-interval-seconds: 30 # 客户端拉取服务注册信息间隔，单位：秒，缺省：30
